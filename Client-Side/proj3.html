@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+  <title>Proj3??</title>
+
+  <script src="/angular-min.js"></script>
+  <script src="/angular-route.js"></script>
+  <script src="/angular-css.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <!-- <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css"> -->
+  <link rel="stylesheet" href="/indexStyle.css">
+
+
+</head>
+<!--  -->
+<body  ng-app="proj" ng-controller="projController">
+  <div class="nav">
+    <nav class="navbar navbar-default col-md-12 " style="border-radius:0px;">
+        <ul class="nav navbar-nav">
+          <a href="#home" class="nav-item" >HOME</a>
+          <a href="#about" class="nav-item" >ABOUT</a>
+          <a href="#services" class="nav-item">SERVICES</a>
+          <a href="#location" class="nav-item" >LOCATION</a>
+          <a href="#contact" class="nav-item" >CONTACT</a>
+        </ul>
+    </nav>
+
+    <div class="doNow">
+      <input type="email" ng-model="e_mail" placeholder="email">
+      <input type="password" ng-model="p_word" placeholder="password">
+      <input type="text" ng-model="p_number" placeholder="Phonenumber">
+      <textarea ng-model="comments" placeholder="comments"></textarea>
+      <button type="button" class="btn btn-info" ng-click="addInfo();">Add TO DB</button>
+    </div>
+    <button type="button" class="btn btn-info" ng-click="getInfo();">Get from DB</button>
+
+    {{dbDatas}}
+</div>
+<script src="indexController.js"></script>
+
+
+   
+<!-- <iframe
+src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3915.149676764812!2d76.96350211490815!3d11.102220492100939!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x4254abad25855b06!2sSri+Ramakrishna+Engineering+College!5e0!3m2!1sen!2sin!4v1528891328326"
+ width="1050" height="600" frameborder="1" style="border:0" allowfullscreen></iframe>
+</body>
+</html> -->
+      <!-- <header class="w3-display-container w3-grayscale-min" id="home">
+          <div class="w3-display-bottomleft w3-padding">
+            <span class="w3-tag w3-xlarge">Welcome</span>
+          </div>
+          <div class="w3-display-middle w3-center">
+            <span class="w3-text-white w3-hide-small" style="font-size:60px">My website bulletin board is the place 
+              I interact with my readers.</span>
+          </div>
+        </header>  
+        <br>
+
+
+      <div class="w3-container w3-padding-64 w3-xlarge cc" id="about">
+        <div class="w3-content">
+        
+          <h1 class="w3-center w3-xxxlarge" style="margin-bottom:64px">ABOUT MYSELF</h1>
+          <div class="w3-row w3-center w3-border w3-border-orange">
+            <a href="javascript:void(0)" onclick="openMenu(event, 'qual');" id="myLink">
+          <div class="w3-col s6 tablink w3-padding-large w3-hover-blue">QUALIFICATION</div>
+            </a>
+            <a href="javascript:void(0)" onclick="openMenu(event, 'pers');">
+          <div class="w3-col s6 tablink w3-padding-large w3-hover-blue">PERSONAL DETAILS</div>
+            </a>
+          </div>
+
+         <div id="qual" class="w3-container menu w3-padding-32">
+          <h1><b>SSLC</b> <span class="w3-right w3-tag w3-dark-grey w3-round">91.6%</span></h1>
+          <p class="w3-text-white">Completed at: Sri Sowdeswari Vidyalaya</p>
+          <hr>
+       
+          <h1><b>HSLC</b> <span class="w3-right w3-tag w3-dark-grey w3-round">80%</span></h1>
+          <p class="w3-text-white">Completed at: Sri Sowdeswari Vidyalaya</p>
+          <hr>
+          
+          <h1><b>B.E CSE</b> <span class="w3-right w3-tag w3-dark-grey w3-round">7.12(Current<br>CGPA)</span></h1>
+          <p class="w3-text-white">Sri Ramakrishna Engineering College</p>
+          <hr>
+        </div>
+
+          <div id="pers" class="w3-container menu w3-padding-32">
+              <h1><b>Name :</b> <span class="w3-right">GIRIJA</span></h1>
+              <hr>
+              <h1><b>Father's Name :</b> <span class="w3-right">SRINIVASAN</span></h1>
+              <hr>
+              <h1><b>Address :</b> <span class="w3-right w3-xlarge">70, Arumuga udayar st,<br> Telungupalayam, <br> Coimbatore</span></h1>
+              <br>
+              <hr>
+              <h1><b>Date of Birth :</b> <span class="w3-right">05-12-1997</span></h1>
+              <hr>
+          </div>
+
+      </div>
+     </div>
+    
+     <div class="w3-container w3-padding-64 w3-xlarge cc"  id="services">
+      <div class="w3-content" style="max-width:1050px;max-height:500px">
+      
+        <h1 class="w3-center w3-xxxlarge" style="margin-bottom:64px">SERVICES</h1>
+        <div class="w3-row w3-center w3-border w3-border-orange">
+          <a href="javascript:void(0)" onclick="openMenu(event, 'tech');" id="myLink">
+             <div class="w3-col s4 tablink w3-padding-large w3-hover-blue">TECHNICAL SKILLS</div>
+          </a>
+          <a href="javascript:void(0)" onclick="openMenu(event, 'stren');">
+            <div class="w3-col s4 tablink w3-padding-large w3-hover-blue">STRENGTH</div>
+          </a>
+          <a href="javascript:void(0)" onclick="openMenu(event, 'aoi');">
+           <div class="w3-col s4 tablink w3-padding-large w3-hover-blue">AREA OF INTEREST</div>
+          </a>
+
+                <div id="tech" class="w3-container menu w3-padding-32">
+                    <p class="w3-text-white"> <br>
+                        Web technologies : HTML, CSS, Javascript,AngularJS,MongoDB<br><br>
+                        Programming languages : C,C++ <br><br>
+                        Database management : mySQL<br><br>
+                        Operating system : Windows, Linux</p> <br>
+                    
+                   </div> 
+                   <div id="stren" class="w3-container menu w3-padding-32">
+                      <p class="w3-text-white"><br> Communication<br><br>
+                          Self Learning<br><br>
+                          Problem solving<br><br>
+                          Dancing<br><br>
+                          Cooking<br>
+                    
+                      </div>
+                      <div id="aoi" class="w3-container menu w3-padding-32">
+                          <p class="w3-text-white"><br> Web Designing<br><br>
+                              Image processing<br><br>
+                              Embedded Systems<br><br>
+                              Artificial Intelligance<br>
+                              <br>
+                          
+                      </div>
+
+    </div>
+   </div>
+   </div>
+
+   <div class="w3-container w3-padding-64 w3-xlarge cc"  id="location">
+   <div class="w3-content">
+   
+     <h1 class="w3-center w3-xxxlarge" style="margin-bottom:64px">LOCATION</h1>
+     <br> -->
+
+<!-- </div>
+     <div class="w3-container w3-padding-64 w3-xlarge cc" id="contact">
+        <div class="w3-content">
+          <h1 class="w3-center w3-jumbo">Contact</h1>
+          <p>Find me at some address at some place or call me at 9698061774</p>
+          <p class="w3-xxlarge"><strong>GIVE ME A COMMENT </p>
+          <form action="#" target="_blank">
+            <p><input class="w3-input w3-padding-16 w3-black w3-border" type="text" placeholder="Name" required name="Name"></p>
+            <p><input class="w3-input w3-padding-16 w3-black w3-border" type="email" placeholder="E-mail" required name="E-mail"></p>             
+            <p><input class="w3-input w3-padding-16 w3-black w3-border" type="number" placeholder="Phonenumber" required name="Phonenumber"></p>
+            <p><input class="w3-input w3-padding-16 w3-black w3-border" type="text area" placeholder="Comments" required name="Comments"></p>
+            <p><button class="w3-button w3-light-grey w3-block" type="submit">SEND MESSAGE</button></p>
+          </form>
+        </div>
+
+      </div>
+  </div>
+
+      <script>
+    function openMenu(evt, menuName)
+  {
+    var i;
+    var x = document.getElementsByClassName("menu");
+    for (i = 0; i < x.length; i++) {
+       x[i].style.display = "none";  
+    }
+    document.getElementById("myNavbar").style.display = "block";
+  }
+ document.getElementById("myNavbar").click();
+ // menu
+      function openMenu(evt, menuName) {
+        var i, x, tablinks;
+        x = document.getElementsByClassName("menu");
+        for (i = 0; i < x.length; i++) {
+           x[i].style.display = "none";
+        }
+        tablinks = document.getElementsByClassName("tablink");
+        for (i = 0; i < x.length; i++) {
+           tablinks[i].className = tablinks[i].className.replace(" w3-black", "");
+        }
+        document.getElementById(menuName).style.display = "block";
+        evt.currentTarget.firstElementChild.className += " w3-black";
+      }
+      document.getElementById("myLink").click();    
+    </script> -->
+
+

@@ -1,0 +1,26 @@
+body  {
+    background : url("http://www.intrawallpaper.com/static/images/funky-wallpaper-hd_JJg2Xa3.jpg");
+    position: relative; 
+
+    
+}
+/* #home {padding-top:50px;font-size: 50px;font-family:'Times New Roman', Times, serif;height:600px;color: orangered;}
+#about {padding-top:50px; font-size: 20px; font-family: sans-serif; height:600px;color: #fff;}
+#services {padding-top:50px;font-size: 20px;font-family: sans-serif;height:600px;color: #fff;}
+#location {padding-top:50px;font-size: 20px;font-family: sans-serif;height:600px;color: #fff;}
+#contact {padding-top:50px;font-size: 20px;font-family: sans-serif;height:600px;color: #fff;}
+img {
+    opacity: 0.2;
+    filter : alpha(opacity=50);
+} */
+.doNow { 
+    display: inline-grid;
+} 
+
+input {
+    margin: 10px;
+}
+
+button {
+    margin-top: 20px;
+}
